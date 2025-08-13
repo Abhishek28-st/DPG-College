@@ -1,2 +1,3 @@
 # DPG-College
-contains the Projects that are related to AI/ML that I will learn in College 
+Hey I am Abhishek 
+This repository will contain All the projects and codes related to AI/ML 
