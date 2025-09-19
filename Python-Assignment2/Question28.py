@@ -1,4 +1,3 @@
-
 n = int(input("Enter the value of n: "))
 count = 0
 num = 2
