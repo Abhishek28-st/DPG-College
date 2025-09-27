@@ -27,7 +27,7 @@ def midpoint_circle(r):
     return points
 
 
-r = 1000
+r = 10
 points = midpoint_circle(r)
 
 xs = [p[0] for p in points]
