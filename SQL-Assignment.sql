@@ -118,3 +118,28 @@ SELECT GeoName AS Place FROM geographies;
 SELECT * FROM products
 ORDER BY Cost_per_box DESC
 LIMIT 5;    
+
+--Question 1 : show all columns form people tables 
+select * from people;
+
+
+-- display the salesperon how sold the maximum total amount overall 
+select * from people 
+where Salesperson = (select Salesperson from sales group by Salesperson order by
+ sum(Amount) desc limit 1);
+
+ --Find the most popular product category based on total sales amount.
+    Select p.category , sum(Amount) as TotalSales 
+    from product p 
+    join sales on p.PID = s.PID
+    group by p.category
+    order by TotalSales desc
+    limit 1;
+
+    --find all sales that are above thier region's average sales amount
+    select * from sales s 
+    join geo g on s.GeoID = g.GeoID
+    where s.Amount > (select avg(Amount) from sales where GeoID = g.GeoID);
+    group by g.Region 
+    order by s.Amount desc; 
+    
